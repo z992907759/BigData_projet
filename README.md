@@ -19,3 +19,8 @@ object SparkApp extends App {
 
 }
 ```
+
+## Modalités de rendu
+
+1. Pull Request vers la branch `master`
+2. Dépot du rapport et du code source zippé dans cours.cyu.fr (Les accès seront bientôt ouverts)
