@@ -3,7 +3,6 @@ import org.apache.spark.sql.SparkSession
 object Main {
   def main(args: Array[String]): Unit = {
 
-    // 默认用 2025-01，可以通过命令行参数覆盖
     val year  = if (args.length > 0) args(0) else "2025"
     val month = if (args.length > 1) args(1) else "01"
 
