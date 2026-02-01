@@ -1,5 +1,7 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.13.17"
+ThisBuild / scalacOptions ++= Seq("-target:jvm-11")
+ThisBuild / javacOptions  ++= Seq("--release", "11")
 
 lazy val root = (project in file("."))
   .settings(
@@ -11,11 +13,6 @@ lazy val root = (project in file("."))
       "com.amazonaws"     %  "aws-java-sdk-bundle" % "1.12.262"
     ),
 
-    // Java 17 + Spark: make sure JVM options are actually applied
-    run / fork := true,
-    run / javaOptions ++= Seq(
-      "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
-      "--add-opens=java.base/java.nio=ALL-UNNAMED",
-      "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED"
-    )
+    // Java 11 (LTS) for the course: compile/target JVM 11
+    run / fork := true
   )
